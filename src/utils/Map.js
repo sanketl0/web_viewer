@@ -6,22 +6,22 @@ import { autoDetectLocale } from "./I18n";
 
 export const DEFAULT_TILES = "https://panoramax.openstreetmap.fr/pmtiles/basic.json";
 export const RASTER_LAYER_ID = "gvs-aerial";
-export const TILES_PICTURES_ZOOM = 15;
+export const TILES_PICTURES_ZOOM = 0;
 export const TILES_PICTURES_SYMBOL_ZOOM = 18;
 
 export const VECTOR_STYLES = {
 	PICTURES: {
 		"paint": {
 			"circle-radius": ["interpolate", ["linear"], ["zoom"],
-				TILES_PICTURES_ZOOM, 4.5,
+				0, 4.5, // Changed to start from zoom 0
 				TILES_PICTURES_SYMBOL_ZOOM, 6,
 				24, 12
 			],
 			"circle-opacity": 1, // Always visible
 			"circle-stroke-color": "#ffffff",
 			"circle-stroke-width": ["interpolate", ["linear"], ["zoom"],
-				TILES_PICTURES_ZOOM+1, 0,
-				TILES_PICTURES_ZOOM+2, 1,
+				0, 1, // Changed to start from zoom 0
+				TILES_PICTURES_ZOOM, 2,
 				TILES_PICTURES_SYMBOL_ZOOM, 1.5,
 				24, 3
 			],
@@ -35,7 +35,7 @@ export const VECTOR_STYLES = {
 		"layout": {
 			"icon-image": ["case", ["==", ["get", "type"], "equirectangular"], "gvs-arrow-360", "gvs-arrow-flat"],
 			"icon-size": ["interpolate", ["linear"], ["zoom"], 
-				TILES_PICTURES_SYMBOL_ZOOM, 0.5, 
+				0, 0.5, // Changed to start from zoom 0
 				24, 1
 			],
 			"icon-rotate": ["to-number", ["get", "heading"]],
@@ -60,6 +60,8 @@ export const VECTOR_STYLES = {
 		"paint": {
 			"line-width": ["interpolate", ["linear"], ["zoom"], 
 				0, 15, 
+				1, 30, // Changed to make it visible from zoom 0
+				2, 20, 
 				TILES_PICTURES_ZOOM+1, 30, 
 				TILES_PICTURES_ZOOM+2, 0
 			],
@@ -71,6 +73,7 @@ export const VECTOR_STYLES = {
 		}
 	}
 };
+
 
 
 
