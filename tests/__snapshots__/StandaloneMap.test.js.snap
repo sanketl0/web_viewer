@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`_onSelect works 1`] = `
+Array [
+  Array [
+    Object {
+      "filter": Array [
+        "==",
+        Array [
+          "get",
+          "id",
+        ],
+        "bla",
+      ],
+      "layers": Array [
+        "geovisio_pictures",
+        "geovisio_toto_pictures",
+      ],
+    },
+  ],
+]
+`;
+
+exports[`_onSelect works 2`] = `Array []`;
+
+exports[`destroy works 1`] = `
+Array [
+  Array [],
+]
+`;

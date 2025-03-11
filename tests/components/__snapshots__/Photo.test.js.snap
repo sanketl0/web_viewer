@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`_getNodeFromAPI works 1`] = `
+Object {
+  "caption": Object {
+    "date": Object {
+      "toLocaleDateString": [Function],
+    },
+    "license": "proprietary",
+    "producer": "User",
+  },
+  "gps": Array [
+    2.1822941,
+    48.9810589,
+  ],
+  "horizontalFov": 360,
+  "id": "0005086d-65eb-4a90-9764-86b3661aaa77",
+  "links": Array [
+    Object {
+      "arrowStyle": Object {
+        "element": <img
+          alt=""
+          src="arrow_triangle.svg"
+        />,
+        "size": Object {
+          "height": 75,
+          "width": 75,
+        },
+      },
+      "gps": Array [
+        2.1822633,
+        48.9811134,
+      ],
+      "linkOffset": Object {
+        "yaw": -0,
+      },
+      "nodeId": "ccf5f468-38b8-4b42-8d79-b97f5391e0a3",
+    },
+    Object {
+      "arrowStyle": Object {
+        "element": <img
+          alt=""
+          src="arrow_triangle.svg"
+        />,
+        "size": Object {
+          "height": 75,
+          "width": 75,
+        },
+      },
+      "gps": Array [
+        2.1823272,
+        48.9810024,
+      ],
+      "linkOffset": Object {
+        "yaw": -0,
+      },
+      "nodeId": "127d9282-d082-46ca-bc09-4b0d8569dd2c",
+    },
+  ],
+  "panorama": Object {
+    "basePanoData": [Function],
+    "baseUrl": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/sd.webp",
+    "cols": 8,
+    "hdUrl": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/hd.jpg",
+    "origBaseUrl": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/sd.webp",
+    "rows": 4,
+    "thumbUrl": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/thumb.jpg",
+    "tileUrl": [Function],
+    "width": 5760,
+  },
+  "properties": Object {
+    "datetime": "2022-05-03T13:28:56+00:00",
+    "license": "proprietary",
+    "pers:interior_orientation": Object {
+      "camera_manufacturer": "GoPro",
+      "camera_model": "Max",
+      "field_of_view": 360,
+      "focal_length": 3,
+    },
+    "tiles:tile_matrix_sets": Object {
+      "geovisio": Object {
+        "identifier": "geovisio-0005086d-65eb-4a90-9764-86b3661aaa77",
+        "tileMatrix": Array [
+          Object {
+            "identifier": "0",
+            "matrixHeight": 4,
+            "matrixWidth": 8,
+            "scaleDenominator": 1,
+            "tileHeight": 720,
+            "tileWidth": 720,
+            "topLeftCorner": Array [
+              0,
+              0,
+            ],
+            "type": "TileMatrixType",
+          },
+        ],
+        "title": "GeoVisio tile matrix for picture 0005086d-65eb-4a90-9764-86b3661aaa77",
+        "type": "TileMatrixSetType",
+      },
+    },
+    "view:azimuth": 0,
+  },
+  "sequence": Object {
+    "id": "bb129602-5ac1-4512-bf67-9ec1fa23033f",
+    "nextPic": "ccf5f468-38b8-4b42-8d79-b97f5391e0a3",
+    "prevPic": "127d9282-d082-46ca-bc09-4b0d8569dd2c",
+  },
+  "sphereCorrection": Object {},
+}
+`;
+
+exports[`_getNodeFromAPI works with nav filter 1`] = `
+Object {
+  "caption": Object {
+    "date": Object {
+      "toLocaleDateString": [Function],
+    },
+    "license": "proprietary",
+    "producer": "User",
+  },
+  "gps": Array [
+    2.1822941,
+    48.9810589,
+  ],
+  "horizontalFov": 360,
+  "id": "0005086d-65eb-4a90-9764-86b3661aaa77",
+  "links": Array [],
+  "panorama": Object {
+    "basePanoData": [Function],
+    "baseUrl": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/sd.webp",
+    "cols": 8,
+    "hdUrl": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/hd.jpg",
+    "origBaseUrl": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/sd.webp",
+    "rows": 4,
+    "thumbUrl": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/thumb.jpg",
+    "tileUrl": [Function],
+    "width": 5760,
+  },
+  "properties": Object {
+    "datetime": "2022-05-03T13:28:56+00:00",
+    "license": "proprietary",
+    "pers:interior_orientation": Object {
+      "camera_manufacturer": "GoPro",
+      "camera_model": "Max",
+      "field_of_view": 360,
+      "focal_length": 3,
+    },
+    "tiles:tile_matrix_sets": Object {
+      "geovisio": Object {
+        "identifier": "geovisio-0005086d-65eb-4a90-9764-86b3661aaa77",
+        "tileMatrix": Array [
+          Object {
+            "identifier": "0",
+            "matrixHeight": 4,
+            "matrixWidth": 8,
+            "scaleDenominator": 1,
+            "tileHeight": 720,
+            "tileWidth": 720,
+            "topLeftCorner": Array [
+              0,
+              0,
+            ],
+            "type": "TileMatrixType",
+          },
+        ],
+        "title": "GeoVisio tile matrix for picture 0005086d-65eb-4a90-9764-86b3661aaa77",
+        "type": "TileMatrixSetType",
+      },
+    },
+    "view:azimuth": 0,
+  },
+  "sequence": Object {
+    "id": "bb129602-5ac1-4512-bf67-9ec1fa23033f",
+    "nextPic": "ccf5f468-38b8-4b42-8d79-b97f5391e0a3",
+    "prevPic": "127d9282-d082-46ca-bc09-4b0d8569dd2c",
+  },
+  "sphereCorrection": Object {},
+}
+`;
+
+exports[`clearPictureMetadataCache works when a pic is selected 1`] = `
+Array [
+  Array [
+    "seq",
+    "pic",
+  ],
+]
+`;
+
+exports[`setTransitionDuration works 1`] = `
+Array [
+  Array [
+    CustomEvent {
+      "isTrusted": false,
+    },
+  ],
+]
+`;

@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`_loadMapStyles handles default user 1`] = `
+Object {
+  "layers": Array [],
+  "metadata": Object {},
+  "sources": Object {
+    "geovisio": Object {
+      "maxzoom": 15,
+      "minzoom": 0,
+      "tiles": Array [
+        "https://panoramax.ign.fr/api/map/{z}/{x}/{y}.mvt",
+      ],
+      "type": "vector",
+    },
+  },
+  "version": 8,
+}
+`;
+
+exports[`_loadMapStyles handles various users 1`] = `
+Object {
+  "layers": Array [
+    Object {
+      "id": "provider",
+    },
+    Object {
+      "id": "provider_bla",
+    },
+    Object {
+      "id": "provider_blo",
+    },
+  ],
+  "metadata": Object {},
+  "sources": Object {
+    "provider": Object {},
+    "provider_bla": Object {},
+    "provider_blo": Object {},
+  },
+  "version": 8,
+}
+`;
+
+exports[`_loadMapStyles loads background style from json 1`] = `
+Object {
+  "layers": Array [
+    Object {
+      "id": "provlayer",
+    },
+  ],
+  "metadata": Object {},
+  "name": "Provider",
+  "sources": Object {
+    "geovisio": Object {
+      "maxzoom": 15,
+      "minzoom": 0,
+      "tiles": Array [
+        "https://panoramax.ign.fr/api/map/{z}/{x}/{y}.mvt",
+      ],
+      "type": "vector",
+    },
+    "provider": Object {},
+  },
+  "version": 8,
+}
+`;
+
+exports[`_loadMapStyles loads background style from string 1`] = `
+Object {
+  "layers": Array [
+    Object {
+      "id": "provlayer",
+    },
+  ],
+  "metadata": Object {},
+  "name": "Provider",
+  "sources": Object {
+    "geovisio": Object {
+      "maxzoom": 15,
+      "minzoom": 0,
+      "tiles": Array [
+        "https://panoramax.ign.fr/api/map/{z}/{x}/{y}.mvt",
+      ],
+      "type": "vector",
+    },
+    "provider": Object {},
+  },
+  "version": 8,
+}
+`;
+
+exports[`_loadMapStyles works if no background style set 1`] = `
+Object {
+  "layers": Array [],
+  "metadata": Object {},
+  "sources": Object {
+    "geovisio": Object {
+      "maxzoom": 15,
+      "minzoom": 0,
+      "tiles": Array [
+        "https://panoramax.ign.fr/api/map/{z}/{x}/{y}.mvt",
+      ],
+      "type": "vector",
+    },
+  },
+  "version": 8,
+}
+`;
+
+exports[`_parseLanding fails if link rel=collection-preview type=image/jpeg is invalid 1`] = `"API endpoint 'collection-preview' (image/jpeg) is not a valid URL: bla"`;
+
+exports[`_parseLanding fails if link rel=data type=application/json is invalid 1`] = `"API endpoint 'data' (application/json) is not a valid URL: bla"`;
+
+exports[`_parseLanding fails if link rel=data type=application/rss+xml is invalid 1`] = `"API endpoint 'data' (application/rss+xml) is not a valid URL: bla"`;
+
+exports[`_parseLanding fails if link rel=item-preview type=image/jpeg is invalid 1`] = `"API endpoint 'item-preview' (image/jpeg) is not a valid URL: bla"`;
+
+exports[`_parseLanding fails if link rel=report type=application/json is invalid 1`] = `"API endpoint 'report' (application/json) is not a valid URL: bla"`;
+
+exports[`_parseLanding fails if link rel=search type=application/geo+json is invalid 1`] = `"API endpoint 'search' (application/geo+json) is not a valid URL: bla"`;
+
+exports[`_parseLanding fails if link rel=user-search type=application/json is invalid 1`] = `"API endpoint 'user-search' (application/json) is not a valid URL: bla"`;
+
+exports[`_parseLanding fails if link rel=user-xyz type=application/vnd.mapbox-vector-tile is invalid 1`] = `"API endpoint 'user-xyz' (application/vnd.mapbox-vector-tile) is not a valid URL: bla"`;
+
+exports[`_parseLanding fails if link rel=user-xyz-style type=application/json is invalid 1`] = `"API endpoint 'user-xyz-style' (application/json) is not a valid URL: bla"`;
+
+exports[`_parseLanding fails if link rel=xyz type=application/vnd.mapbox-vector-tile is invalid 1`] = `"API endpoint 'xyz' (application/vnd.mapbox-vector-tile) is not a valid URL: bla"`;
+
+exports[`_parseLanding fails if link rel=xyz-style type=application/json is invalid 1`] = `"API endpoint 'xyz-style' (application/json) is not a valid URL: bla"`;
+
+exports[`_parseLanding fails if mandatory links are not set 1`] = `
+"API doesn't offer a 'search' (application/geo+json) endpoint in its links
+No direct access to pictures metadata.
+API doesn't offer a 'data' (application/json) endpoint in its links
+No way for viewer to access sequences."
+`;

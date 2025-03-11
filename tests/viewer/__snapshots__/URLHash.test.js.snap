@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`_updateHash works 1`] = `
+Array [
+  Array [
+    CustomEvent {
+      "isTrusted": false,
+    },
+  ],
+]
+`;
+
+exports[`_updateHash works with pic change 1`] = `
+Array [
+  Array [
+    CustomEvent {
+      "isTrusted": false,
+    },
+  ],
+]
+`;
+
+exports[`bindMapEvents works 1`] = `
+Array [
+  Array [
+    "moveend",
+    [Function],
+  ],
+]
+`;
+
+exports[`constructor works 1`] = `
+Array [
+  Array [
+    "ready",
+    [Function],
+  ],
+  Array [
+    "psv:view-rotated",
+    [Function],
+  ],
+  Array [
+    "psv:picture-loaded",
+    [Function],
+  ],
+  Array [
+    "focus-changed",
+    [Function],
+  ],
+  Array [
+    "filters-changed",
+    [Function],
+  ],
+  Array [
+    "psv:transition-duration-changed",
+    [Function],
+  ],
+  Array [
+    "map:background-changed",
+    [Function],
+  ],
+  Array [
+    "map:users-changed",
+    [Function],
+  ],
+  Array [
+    "pictures-navigation-changed",
+    [Function],
+  ],
+]
+`;
+
+exports[`destroy works 1`] = `
+Array [
+  Array [
+    "psv:view-rotated",
+    [Function],
+  ],
+  Array [
+    "psv:picture-loaded",
+    [Function],
+  ],
+  Array [
+    "focus-changed",
+    [Function],
+  ],
+  Array [
+    "filters-changed",
+    [Function],
+  ],
+  Array [
+    "psv:transition-duration-changed",
+    [Function],
+  ],
+  Array [
+    "map:background-changed",
+    [Function],
+  ],
+  Array [
+    "map:users-changed",
+    [Function],
+  ],
+  Array [
+    "pictures-navigation-changed",
+    [Function],
+  ],
+]
+`;

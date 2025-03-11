@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`forwardGeocodingBAN works 1`] = `
+Object {
+  "attribution": "BAN",
+  "features": Array [
+    Object {
+      "center": Object {
+        "lat": 47.8,
+        "lng": -1.7,
+      },
+      "place_name": "8 Boulevard du Port, Amiens",
+      "place_type": Array [
+        "place",
+      ],
+      "zoom": 20,
+    },
+  ],
+  "licence": "ODbL 1.0",
+  "limit": 1,
+  "query": "8 bd du port",
+  "type": "FeatureCollection",
+  "version": "draft",
+}
+`;
+
+exports[`forwardGeocodingNominatim works 1`] = `
+Object {
+  "features": Array [
+    Object {
+      "bounds": Object {
+        "ne": Object {
+          "lat": 47.8,
+          "lng": -1.7,
+        },
+        "sw": Object {
+          "lat": 47.8,
+          "lng": -1.7,
+        },
+      },
+      "place_name": "Paris, Île-de-France, France métropolitaine, France",
+      "place_type": Array [
+        "place",
+      ],
+    },
+  ],
+}
+`;

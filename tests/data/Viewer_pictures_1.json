@@ -1,0 +1,148 @@
+{
+  "features": [
+	{
+	  "asset_templates": {
+		"tiles": {
+		  "href": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/tiled/{TileCol}_{TileRow}.jpg",
+		  "roles": ["data"],
+		  "type": "image/jpeg"
+		},
+		"tiles_webp": {
+		  "href": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/tiled/{TileCol}_{TileRow}.webp",
+		  "roles": ["data"],
+		  "type": "image/webp"
+		}
+	  },
+	  "assets": {
+		"hd": {
+		  "href": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/hd.jpg",
+		  "roles": ["data"],
+		  "type": "image/jpeg"
+		},
+		"hd_webp": {
+		  "href": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/hd.webp",
+		  "roles": ["data"],
+		  "type": "image/webp"
+		},
+		"sd": {
+		  "href": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/sd.jpg",
+		  "roles": ["visual"],
+		  "type": "image/jpeg"
+		},
+		"sd_webp": {
+		  "href": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/sd.webp",
+		  "roles": ["visual"],
+		  "type": "image/webp"
+		},
+		"thumb": {
+		  "href": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/thumb.jpg",
+		  "roles": ["thumbnail"],
+		  "type": "image/jpeg"
+		},
+		"thumb_webp": {
+		  "href": "https://geovisio.fr/api/pictures/0005086d-65eb-4a90-9764-86b3661aaa77/thumb.webp",
+		  "roles": ["thumbnail"],
+		  "type": "image/webp"
+		}
+	  },
+	  "bbox": [2.1822941,48.9810589,2.1822941,48.9810589],
+	  "collection": "bb129602-5ac1-4512-bf67-9ec1fa23033f",
+	  "geometry": {
+		"coordinates": [2.1822941,48.9810589],
+		"type": "Point"
+	  },
+	  "id": "0005086d-65eb-4a90-9764-86b3661aaa77",
+	  "links": [
+		{
+		  "href": "https://geovisio.fr/api",
+		  "rel": "root",
+		  "type": "application/json"
+		},
+		{
+		  "href": "https://geovisio.fr/api/collections/bb129602-5ac1-4512-bf67-9ec1fa23033f",
+		  "rel": "parent",
+		  "type": "application/json"
+		},
+		{
+		  "href": "https://geovisio.fr/api/collections/bb129602-5ac1-4512-bf67-9ec1fa23033f/items/0005086d-65eb-4a90-9764-86b3661aaa77",
+		  "rel": "self",
+		  "type": "application/geo+json"
+		},
+		{
+		  "href": "https://geovisio.fr/api/collections/bb129602-5ac1-4512-bf67-9ec1fa23033f",
+		  "rel": "collection",
+		  "type": "application/json"
+		},
+		{
+		  "geometry": {
+			"coordinates": [2.1822633,48.9811134],
+			"type": "Point"
+		  },
+		  "href": "https://geovisio.fr/api/collections/bb129602-5ac1-4512-bf67-9ec1fa23033f/items/ccf5f468-38b8-4b42-8d79-b97f5391e0a3",
+		  "id": "ccf5f468-38b8-4b42-8d79-b97f5391e0a3",
+		  "rel": "next",
+		  "type": "application/geo+json"
+		},
+		{
+		  "geometry": {
+			"coordinates": [2.1823272,48.9810024],
+			"type": "Point"
+		  },
+		  "href": "https://geovisio.fr/api/collections/bb129602-5ac1-4512-bf67-9ec1fa23033f/items/127d9282-d082-46ca-bc09-4b0d8569dd2c",
+		  "id": "127d9282-d082-46ca-bc09-4b0d8569dd2c",
+		  "rel": "prev",
+		  "type": "application/geo+json"
+		}
+	  ],
+	  "properties": {
+		"datetime": "2022-05-03T13:28:56+00:00",
+		"license": "proprietary",
+		"pers:interior_orientation": {
+		  "camera_manufacturer": "GoPro",
+		  "camera_model": "Max",
+		  "field_of_view": 360,
+		  "focal_length": 3
+		},
+		"tiles:tile_matrix_sets": {
+		  "geovisio": {
+			"identifier": "geovisio-0005086d-65eb-4a90-9764-86b3661aaa77",
+			"tileMatrix": [
+			  {
+				"identifier": "0",
+				"matrixHeight": 4,
+				"matrixWidth": 8,
+				"scaleDenominator": 1,
+				"tileHeight": 720,
+				"tileWidth": 720,
+				"topLeftCorner": [0,0],
+				"type": "TileMatrixType"
+			  }
+			],
+			"title": "GeoVisio tile matrix for picture 0005086d-65eb-4a90-9764-86b3661aaa77",
+			"type": "TileMatrixSetType"
+		  }
+		},
+		"view:azimuth": 0
+	  },
+	  "providers": [
+		{
+		  "name": "User",
+		  "roles": ["producer"]
+		},
+		{
+		  "name": "geovisio.fr",
+		  "roles": ["processor","host"]
+		}
+	  ],
+	  "stac_extensions": [
+		"https://stac-extensions.github.io/view/v1.0.0/schema.json",
+		"https://raw.githubusercontent.com/stac-extensions/perspective-imagery/main/json-schema/schema.json",
+		"https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+	  ],
+	  "stac_version": "1.0.0-rc.2",
+	  "type": "Feature"
+	}
+  ],
+  "links": [],
+  "type": "FeatureCollection"
+}

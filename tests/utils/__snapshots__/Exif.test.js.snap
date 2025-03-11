@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getCroppedPanoData works with API props 1`] = `
+Object {
+  "croppedHeight": 2606,
+  "croppedWidth": 15872,
+  "croppedX": 0,
+  "croppedY": 2538,
+  "fullHeight": 7936,
+  "fullWidth": 15872,
+}
+`;
+
+exports[`getCroppedPanoData works with API props and unneeded 1`] = `Object {}`;
+
+exports[`getCroppedPanoData works with exif tags 1`] = `
+Object {
+  "croppedHeight": 2606,
+  "croppedWidth": 15872,
+  "croppedX": 0,
+  "croppedY": 2538,
+  "fullHeight": 7936,
+  "fullWidth": 15872,
+}
+`;
+
+exports[`getCroppedPanoData works with exif tags and unneeded 1`] = `Object {}`;
+
+exports[`getSphereCorrection works with API props 1`] = `
+Object {
+  "pan": 0.7330382858376184,
+  "roll": 1.260127719939906,
+  "tilt": -0.5235987755982988,
+}
+`;
+
+exports[`getSphereCorrection works with exif tags 1`] = `
+Object {
+  "pan": 0.7330382858376184,
+  "roll": 1.260127719939906,
+  "tilt": -0.5235987755982988,
+}
+`;

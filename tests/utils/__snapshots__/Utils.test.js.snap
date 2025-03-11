@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getNodeCaption works with date + 2 producers 1`] = `
+Object {
+  "date": Object {
+    "toLocaleDateString": [Function],
+  },
+  "producer": "GeoVisio Corp., PanierAvide",
+}
+`;
+
+exports[`getNodeCaption works with date + producer 1`] = `
+Object {
+  "date": Object {
+    "toLocaleDateString": [Function],
+  },
+  "producer": "PanierAvide",
+}
+`;
+
+exports[`getNodeCaption works with date 1`] = `
+Object {
+  "date": Object {
+    "toLocaleDateString": [Function],
+  },
+}
+`;
+
+exports[`getNodeCaption works with date+tz 1`] = `
+Object {
+  "date": Object {
+    "toLocaleDateString": [Function],
+  },
+}
+`;
+
+exports[`getNodeCaption works with producer 1`] = `
+Object {
+  "producer": "PanierAvide",
+}
+`;

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Panoramax Web Viewer</title>
+  <style>
+    #viewer {
+      position: relative;
+      width: 95%;
+      margin: 2.5%;
+      height: 400px;
+    }
+    #viewer.fullpage {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: unset;
+      width: unset;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+<noscript>
+  You need to enable JavaScript to run this app.
+</noscript>
+<div id="viewer" class="fullpage"></div>
+<script>
+  var viewer;
+  var servers = {
+    meta: "https://api.panoramax.xyz/api",
+    ign: "https://panoramax.ign.fr/api",
+    osm: "https://panoramax.openstreetmap.fr/api",
+    local: "http://localhost:5000/api",
+    dev: "https://panoramax.codeureusesenliberte.fr/api",
+  };
+  var urlParams = new URLSearchParams(window.location.search);
+  var server = servers[urlParams.get("server") || "meta"];
+
+  window.onload = () => {
+    viewer = new Panoramax.Viewer(
+      "viewer",
+      server,
+      {
+        widgets: {
+          iframeBaseURL: "https://api.panoramax.xyz/"
+        },
+        map: {
+          startWide: true,
+          raster: {
+            type: "raster",
+            tiles: [
+              "https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&STYLE=normal&FORMAT=image/jpeg&TILEMATRIXSET=PM_0_21&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}"
+            ],
+            minzoom: 0,
+            maxzoom: 21,
+            attribution: "&copy; IGN",
+            tileSize: 256
+          }
+        }
+      }
+    );
+  };
+</script>
+</body>
+</html>

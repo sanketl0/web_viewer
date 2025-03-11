@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`_addMapBackgroundWidget works 1`] = `
+<div>
+  <div
+    class="gvs-panel gvs-widget-bg gvs-input-group"
+    id="gvs-map-bg"
+  >
+    <input
+      id="gvs-map-bg-streets"
+      name="gvs-map-bg"
+      type="radio"
+      value="streets"
+    />
+    <label
+      for="gvs-map-bg-streets"
+    >
+      <img
+        alt=""
+        src="bg_streets.jpg"
+      />
+      Streets
+    </label>
+    <input
+      id="gvs-map-bg-aerial"
+      name="gvs-map-bg"
+      type="radio"
+      value="aerial"
+    />
+    <label
+      for="gvs-map-bg-aerial"
+    >
+      <img
+        alt=""
+        src="bg_aerial.jpg"
+      />
+      Aerial
+    </label>
+  </div>
+</div>
+`;
+
+exports[`_bindPicturesEvents works 1`] = `
+Array [
+  Array [
+    "mousemove",
+    "geovisio_editor_pictures",
+    [Function],
+  ],
+  Array [
+    "mouseleave",
+    "geovisio_editor_pictures",
+    [Function],
+  ],
+  Array [
+    "click",
+    "geovisio_editor_pictures",
+    [Function],
+  ],
+]
+`;
+
+exports[`_createMapStyle works 1`] = `
+Object {
+  "layers": Array [
+    Object {
+      "id": "geovisio_editor_sequences",
+      "layout": Object {
+        "line-cap": "square",
+      },
+      "paint": Object {
+        "line-width": Array [
+          "interpolate",
+          Array [
+            "linear",
+          ],
+          Array [
+            "zoom",
+          ],
+          0,
+          0.5,
+          10,
+          2,
+          14,
+          4,
+          16,
+          5,
+          22,
+          3,
+        ],
+      },
+      "source": "geovisio_editor_sequences",
+      "type": "line",
+    },
+    Object {
+      "id": "geovisio_editor_pictures",
+      "layout": Object {},
+      "paint": Object {
+        "circle-opacity": Array [
+          "interpolate",
+          Array [
+            "linear",
+          ],
+          Array [
+            "zoom",
+          ],
+          15,
+          0,
+          16,
+          1,
+        ],
+        "circle-radius": Array [
+          "interpolate",
+          Array [
+            "linear",
+          ],
+          Array [
+            "zoom",
+          ],
+          15,
+          4.5,
+          18,
+          6,
+          24,
+          12,
+        ],
+        "circle-stroke-color": "#ffffff",
+        "circle-stroke-width": Array [
+          "interpolate",
+          Array [
+            "linear",
+          ],
+          Array [
+            "zoom",
+          ],
+          16,
+          0,
+          17,
+          1,
+          18,
+          1.5,
+          24,
+          3,
+        ],
+      },
+      "source": "geovisio_editor_sequences",
+      "type": "circle",
+    },
+  ],
+  "sources": Object {
+    "geovisio_editor_sequences": Object {
+      "data": Object {
+        "features": Array [],
+        "type": "FeatureCollection",
+      },
+      "type": "geojson",
+    },
+  },
+}
+`;
+
+exports[`_getNode works 1`] = `
+Object {
+  "caption": Object {},
+  "gps": Array [
+    0.1,
+    0.1,
+  ],
+  "horizontalFov": 70,
+  "id": undefined,
+  "panorama": Object {
+    "basePanoData": [Function],
+    "baseUrl": "2.jpg",
+    "cols": 2,
+    "hdUrl": undefined,
+    "origBaseUrl": "2.jpg",
+    "rows": 1,
+    "thumbUrl": undefined,
+    "tileUrl": [Function],
+    "width": 2,
+  },
+  "properties": Object {
+    "id": "2",
+  },
+  "sequence": Object {
+    "id": undefined,
+    "nextPic": undefined,
+    "prevPic": undefined,
+  },
+  "sphereCorrection": Object {},
+}
+`;
+
+exports[`previewSequenceHeadingChange works when setting preview 1`] = `
+Array [
+  Array [
+    Object {
+      "id": "sequence-headings",
+      "layout": Object {
+        "icon-image": "gvs-marker",
+        "icon-overlap": "always",
+        "icon-size": 0.8,
+      },
+      "source": "geovisio_editor_sequences",
+      "type": "symbol",
+    },
+  ],
+]
+`;
+
+exports[`previewSequenceHeadingChange works when setting preview 2`] = `
+Array [
+  Array [
+    "sequence-headings",
+    "visibility",
+    "visible",
+  ],
+  Array [
+    "sequence-headings",
+    "icon-rotate",
+    Array [
+      "+",
+      Array [
+        "get",
+        "view:azimuth",
+      ],
+      -12,
+      10,
+    ],
+  ],
+]
+`;
+
+exports[`previewSequenceHeadingChange works when setting preview 3`] = `
+Array [
+  Array [
+    "sequence-headings",
+    Array [
+      "all",
+      Array [
+        "==",
+        Array [
+          "geometry-type",
+        ],
+        "Point",
+      ],
+    ],
+  ],
+]
+`;
+
+exports[`previewSequenceHeadingChange works when unsetting 1`] = `Array []`;
+
+exports[`previewSequenceHeadingChange works when unsetting 2`] = `
+Array [
+  Array [
+    "sequence-headings",
+    "visibility",
+    "visible",
+  ],
+  Array [
+    "sequence-headings",
+    "icon-rotate",
+    Array [
+      "+",
+      Array [
+        "get",
+        "view:azimuth",
+      ],
+      -12,
+      10,
+    ],
+  ],
+  Array [
+    "sequence-headings",
+    "visibility",
+    "none",
+  ],
+]
+`;
+
+exports[`previewSequenceHeadingChange works when unsetting 3`] = `
+Array [
+  Array [
+    "sequence-headings",
+    Array [
+      "all",
+      Array [
+        "==",
+        Array [
+          "geometry-type",
+        ],
+        "Point",
+      ],
+    ],
+  ],
+]
+`;

@@ -1,0 +1,37 @@
+/* General layout */
+.gvs-editor {
+	display: flex;
+	flex-direction: column;
+}
+
+.gvs-editor .gvs-map,
+.gvs-editor .gvs-psv {
+	height: 50%;
+}
+
+/* Map background widget */
+.gvs-editor #gvs-map-bg {
+	display: flex;
+	gap: 20px;
+	justify-content: space-evenly;
+	margin: 10px;
+	padding: 7px;
+	width: unset;
+	border-radius: 10px;
+	position: absolute;
+	bottom: 0;
+}
+.gvs-editor #gvs-map-bg input { display: none; }
+.gvs-editor #gvs-map-bg label { cursor: pointer; }
+
+.gvs-editor #gvs-map-bg img {
+	width: 32px;
+	border-radius: 5px;
+	vertical-align: middle;
+	margin-right: 5px;
+	border: 2px solid var(--widget-bg);
+}
+
+.gvs-editor #gvs-map-bg input:checked + label img {
+	outline: 3px solid var(--widget-border-btn);
+}

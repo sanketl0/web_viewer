@@ -1,0 +1,45 @@
+site_name: 'Panoramax - Web viewer'
+site_url: https://docs.panoramax.fr
+
+theme:
+  name: material
+  logo: https://gitlab.com/panoramax/gitlab-profile/-/raw/main/images/panoramax_favicon.svg
+  features:
+    - navigation.footer
+    - navigation.tracking
+    - navigation.sections
+    - search.suggest
+    - search.share
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - 'Quick start': '01_Start.md'
+  - Configuration:
+    - 'URL settings': '03_URL_settings.md'
+    - 'Advanced examples': '04_Advanced_examples.md'
+  - Developping:
+    - 'Where to start': '09_Develop.md'
+    - 'Viewer''s API reference': '02_Usage.md'
+    - 'STAC API compatibility': '05_Compatibility.md'
+    - 'Make a release': '90_Releases.md'

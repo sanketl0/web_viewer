@@ -1,0 +1,255 @@
+{
+  "name": "@panoramax/web-viewer",
+  "version": "3.2.3",
+  "description": "Panoramax web viewer for geolocated pictures",
+  "main": "build/index.js",
+  "author": "Panoramax team",
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js",
+    "lint": "npx eslint --fix src/*.js src/**/*.js",
+    "doc": "documentation build src -f md --markdown-toc-max-depth 2 -o ./docs/02_Usage.md",
+    "coverage": "node scripts/test.js --coverage --watchAll=false",
+    "trypublish": "npm publish || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/panoramax/clients/web-viewer"
+  },
+  "homepage": ".",
+  "keywords": [
+    "library",
+    "panoramax",
+    "pictures",
+    "geolocated"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
+    "@svgr/webpack": "^6.5.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "babel-jest": "^29.4.1",
+    "babel-loader": "^9.1.2",
+    "babel-plugin-named-asset-import": "^0.3.8",
+    "babel-preset-react-app": "^10.0.1",
+    "bfj": "^7.0.2",
+    "browserslist": "^4.21.4",
+    "camelcase": "^6.2.1",
+    "case-sensitive-paths-webpack-plugin": "^2.4.0",
+    "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "dotenv": "^16.0.2",
+    "dotenv-expand": "^5.1.0",
+    "eslint": "^8.33.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-jsdoc": "^40.0.0",
+    "eslint-webpack-plugin": "^3.2.0",
+    "file-loader": "^6.2.0",
+    "fs-extra": "^11.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.4.3",
+    "jest-resolve": "^29.4.1",
+    "jest-watch-typeahead": "^2.1.1",
+    "mini-css-extract-plugin": "^2.7.2",
+    "postcss": "^8.4.21",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-loader": "^7.0.2",
+    "postcss-normalize": "^10.0.1",
+    "postcss-preset-env": "^8.0.1",
+    "prompts": "^2.4.2",
+    "react": "^18.2.0",
+    "react-app-polyfill": "^3.0.0",
+    "react-dev-utils": "^12.0.1",
+    "react-dom": "^18.2.0",
+    "react-refresh": "^0.14.0",
+    "resolve": "^1.22.1",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.58.0",
+    "sass-loader": "^13.2.0",
+    "semver": "^7.3.8",
+    "source-map-loader": "^4.0.1",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.2.4",
+    "terser-webpack-plugin": "^5.3.6",
+    "web-vitals": "^3.1.1",
+    "webpack": "^5.75.0",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-manifest-plugin": "^5.0.0",
+    "workbox-webpack-plugin": "^6.5.4"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@photo-sphere-viewer/core": "5.11.0-beta.1",
+    "@photo-sphere-viewer/equirectangular-tiles-adapter": "5.11.0-beta.1",
+    "@photo-sphere-viewer/gallery-plugin": "5.11.0-beta.1",
+    "@photo-sphere-viewer/markers-plugin": "5.11.0-beta.1",
+    "@photo-sphere-viewer/virtual-tour-plugin": "5.11.0-beta.1",
+    "documentation": "^14.0.1",
+    "maplibre-gl": "^4.7.1",
+    "pmtiles": "^3.2.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true,
+      "jest/globals": true
+    },
+    "globals": {
+      "__COMMIT_HASH__": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [
+      {
+        "files": [
+          "tests/*.js"
+        ],
+        "plugins": [
+          "jest"
+        ],
+        "extends": [
+          "plugin:jest/recommended"
+        ],
+        "rules": {
+          "jest/prefer-expect-assertions": "off"
+        }
+      }
+    ],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "jsdoc",
+      "jest",
+      "import"
+    ],
+    "rules": {
+      "indent": [
+        "error",
+        "tab"
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "quotes": [
+        "warn",
+        "double"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "import/no-unused-modules": [
+        1,
+        {
+          "unusedExports": true,
+          "ignoreExports": []
+        }
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>"
+    ],
+    "globals": {
+      "__COMMIT_HASH__": true
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts"
+    ],
+    "setupFiles": [
+      "react-app-polyfill/jsdom"
+    ],
+    "setupFilesAfterEnv": [],
+    "testMatch": [
+      "<rootDir>/tests/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/tests/**/*.{spec,test}.{js,jsx,ts,tsx}"
+    ],
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "modulePaths": [],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web",
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
+      "!(.*)": "$1"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ],
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ],
+    "resetMocks": true
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "loose": true
+        }
+      ],
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        }
+      ],
+      [
+        "@babel/plugin-proposal-private-property-in-object",
+        {
+          "loose": true
+        }
+      ]
+    ]
+  }
+}

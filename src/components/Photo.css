@@ -1,0 +1,41 @@
+/* Smaller loading text */
+.psv-loader-text {
+	text-align: center;
+	font-size: 0.9em;
+}
+
+.psv-loader-image { width: 80%; }
+
+.psv-overlay { opacity: 1 !important; }
+
+/* Hide PSV tooltips */
+.psv-virtual-tour-tooltip { display: none; }
+
+/* Resize canvas for print */
+@media print {
+	.gvs .gvs-psv canvas {
+		width: 100% !important;
+		height: unset !important;
+	}
+}
+
+/* Virtual Tour SVG arrows */
+.gvs-psv-tour-arrows {
+	background: none;
+	border: none;
+
+}
+.gvs-psv-tour-arrows:active svg,
+.gvs-psv-tour-arrows.gvs-clicked svg {
+	opacity: 0.4;
+	transition: opacity 0.2s ease;
+}
+.gvs-psv-tour-arrows svg {
+	width: 100%;
+	height: auto;
+}
+
+/* No virtual tour arrows if photo is reduced */
+.gvs-mini .gvs-psv .psv-virtual-tour-arrows {
+	display: none;
+}

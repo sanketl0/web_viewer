@@ -1,0 +1,70 @@
+/* Main container */
+.gvs {
+	container-type: inline-size;
+	box-sizing: border-box;
+}
+
+.gvs * { box-sizing: border-box; }
+
+/* Colors */
+:root {
+	--white: #ffffff;
+	--black: #181818;
+	--black-pale: #1b1a17;
+	--red: #f70000;
+	--red-pale: #ff726f;
+	--grey: #f5f5f5;
+	--grey-pale: #cfd2cf;
+	--grey-semi-dark: #808080;
+	--grey-dark: #3e3e3e;
+	--blue: #2954e9;
+	--blue-dark: #0a1f69;
+	--blue-semi: #d7dffc;
+	--blue-pale: #f2f5ff;
+	--blue-geovisio: #34495e;
+	--beige: #f5f3ec;
+	--yellow: #fec868;
+	--orange: #ff6f00;
+	--orange-pale: #fffafa;
+	--green: #7ec636;
+	--green-pale: #f0ffee;
+}
+
+/* Titles */
+.gvs h3 {
+	font-size: 1.1em;
+	line-height: 1.1em;
+	font-weight: 500;
+	margin: 10px 0 10px 0;
+}
+
+.gvs h4 {
+	font-size: 1.0em;
+	line-height: 1.0em;
+	font-weight: 500;
+	margin: 15px 0;
+}
+
+.gvs h4:first-of-type { margin-top: 0; }
+
+.gvs h4 svg {
+	height: 18px;
+	vertical-align: sub;
+	margin-right: 2px;
+}
+
+.gvs h4 a svg {
+	height: 16px;
+	vertical-align: sub;
+	margin-left: 2px;
+}
+
+/* Hidden elements on mobile */
+@container (max-width: 576px) {
+	.gvs-mobile-hidden { display: none !important; }
+}
+
+/* Hidden elements on print */
+@media print {
+	.gvs-print-hidden { display: none !important; }
+}

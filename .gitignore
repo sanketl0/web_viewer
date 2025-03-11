@@ -1,0 +1,8 @@
+*.env
+*.log
+/node_modules
+/demo
+/build
+/.vscode
+/env
+/site

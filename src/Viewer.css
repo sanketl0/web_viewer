@@ -1,0 +1,203 @@
+/*
+ *  Sizing of elements
+ */
+
+/* Focused element */
+.gvs-viewer .gvs-main
+{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.gvs-viewer .gvs-main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Non-focused element */
+.gvs-viewer .gvs-mini
+{
+  position: absolute;
+  top: unset;
+  bottom: 10px;
+  left: 10px;
+  height: 30%;
+  min-height: 232px;
+  aspect-ratio: 1 / 1;
+  z-index: 1;
+}
+
+.gvs.gvs-viewer:not(.gvs-has-mini) .gvs-mini,
+.gvs.gvs-viewer.gvs-mini-hidden .gvs-mini {
+  display: none;
+}
+
+@container (max-width: 576px) {       /* Special rule for small containers */
+  .gvs-viewer .gvs-mini {
+    max-width: 166px;
+    max-height: 110px;
+    min-height: unset;
+    width: 50%;
+    height: 30%;
+  }
+}
+
+.gvs-viewer .gvs-map.maplibregl-map {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+/* PSV fulfilling its parent */
+.gvs-viewer .gvs-psv,
+.gvs-viewer .gvs-popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+
+/*
+ * Styling
+ */
+
+
+/* Non-focused element */
+.gvs-viewer .gvs-mini,
+.gvs-viewer .gvs-mini .psv-container,
+.gvs-viewer .gvs-mini .gvs-map
+{
+  border-radius: 10px;
+}
+
+/* PSV under widgets */
+.gvs-viewer .psv-container {
+  z-index: 0;
+}
+
+/* No PSV loader */
+.gvs-viewer .psv-loader {
+  display: none;
+}
+
+/* Overlay under navbar */
+.gvs-viewer .psv-overlay {
+  z-index: 89;
+}
+
+/* Popup */
+.gvs-viewer .gvs-popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.1s;
+  z-index: 10;
+  visibility: visible;
+  opacity: 1;
+}
+
+.gvs-viewer .gvs-popup.gvs-hidden {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.gvs-viewer .gvs-popup-backdrop {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.gvs-viewer .gvs-popup div.gvs-widget-bg {
+  max-width: 90%;
+  max-height: 90%;
+	position: absolute;
+	padding: 15px;
+	z-index: 10;
+	border-radius: 25px;
+  overflow-y: auto;
+}
+
+.gvs-viewer #gvs-popup-btn-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 24px;
+  min-width: unset;
+  height: 24px;
+  border-radius: 12px;
+}
+
+.gvs-viewer .gvs-popup table {
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.gvs-viewer .gvs-popup thead {
+  background-color: var(--blue-pale);
+}
+
+.gvs-viewer .gvs-popup th[scope="row"] {
+  text-align: left;
+}
+
+.gvs-viewer .gvs-popup th, .gvs-popup td {
+  border: 1px solid var(--grey-semi-dark);
+  padding: 8px 10px;
+  max-width: 600px;
+}
+
+.gvs-viewer .gvs-popup .gvs-table-light th[scope="row"] {
+  width: 30%;
+}
+
+.gvs-viewer .gvs-popup .gvs-table-light th,
+.gvs-viewer .gvs-popup .gvs-table-light td {
+  border: none;
+  padding: 5px 10px;
+  text-align: left;
+}
+
+.gvs-viewer .gvs-popup .gvs-table-light .gvs-td-with-id {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gvs-viewer .gvs-popup table:not(.gvs-table-light) td:last-of-type {
+  text-align: center;
+}
+
+.gvs-viewer .gvs-popup table:not(.gvs-table-light) tbody > tr:nth-of-type(even) {
+  background-color: var(--grey);
+}
+
+.gvs-viewer .gvs-popup details summary {
+  font-size: 1.0em;
+	line-height: 1.0em;
+	font-weight: 500;
+	margin: 15px 0;
+  cursor: pointer;
+}
+
+.gvs-viewer .gvs-popup details summary svg {
+	height: 18px;
+	vertical-align: sub;
+	margin-right: 2px;
+}
+
+.gvs-viewer .gvs-metadata-actions {
+  justify-content: center;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,65 @@
+/* Force maplibre to fill all available space */
+.gvs-map.maplibregl-map {
+	width: 100%;
+	height: 100%;
+	background-color: white;
+}
+
+/* Picture thumbnail on map */
+.maplibregl-popup-content {
+	padding: 5px !important;
+	position: relative;
+}
+
+.gvs-map-thumb {
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	max-width: 130px;
+	max-height: 130px;
+}
+
+@keyframes rotating {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+.gvs-map-thumb-loader {
+	background-color: rgb(230,230,230);
+	border-radius: 65px;
+	max-height: 60px;
+	margin: 5px 35px;
+	animation: rotating 2s linear infinite;
+}
+
+.gvs-map-thumb-legend {
+	display: block;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	left: 5px;
+	background-color: rgba(0,0,0,0.8);
+	color: white;
+	text-align: center;
+	font-style: italic;
+	font-size: 0.8em;
+	margin: 0;
+	padding: 0;
+}
+
+/* Max size for geocoder search bar */
+.maplibregl-ctrl-geocoder {
+	max-width: 60%;
+}
+
+.maplibregl-marker {
+	width: 60px;
+}
+
+/* Resize canvas for print */
+@media print {
+	.gvs-map.maplibregl-map canvas {
+		width: 100% !important;
+		height: 100% !important;
+	}
+}

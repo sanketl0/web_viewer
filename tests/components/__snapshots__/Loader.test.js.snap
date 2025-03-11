@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`constructor works 1`] = `"<img src=\\"marker.svg\\" alt=\\"\\" title=\\"undefined\\" class=\\"gvs-loader-img\\"><div><span>Loading...</span></div>"`;
+
+exports[`dismiss works when no error set 1`] = `
+Array [
+  Array [
+    CustomEvent {
+      "isTrusted": false,
+    },
+  ],
+]
+`;
+
+exports[`dismiss works with error set 1`] = `"<img src=\\"logo_dead.svg\\" alt=\\"\\" title=\\"undefined\\" class=\\"gvs-loader-img\\" style=\\"width: 200px; animation: unset;\\"><div>undefined<br>Oops it's broken<br><small>undefined</small></div>"`;

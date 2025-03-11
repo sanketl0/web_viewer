@@ -1,0 +1,56 @@
+{
+  "type": "FeatureCollection",
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "place_id": 297417241,
+        "osm_type": "relation",
+        "osm_id": 7444,
+        "display_name": "Paris, Île-de-France, France métropolitaine, France",
+        "place_rank": 15,
+        "category": "boundary",
+        "type": "administrative",
+        "importance": 0.9317101715588673,
+        "icon": "https://nominatim.openstreetmap.org/ui/mapicons/poi_boundary_administrative.p.20.png",
+        "address": {
+          "suburb": "Paris",
+          "city_district": "Paris",
+          "city": "Paris",
+          "ISO3166-2-lvl6": "FR-75",
+          "state": "Île-de-France",
+          "ISO3166-2-lvl4": "FR-IDF",
+          "region": "France métropolitaine",
+          "country": "France",
+          "country_code": "fr"
+        }
+      },
+      "bbox": [
+        2.224122,
+        48.8155755,
+        2.4697602,
+        48.902156
+      ],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.224122,
+              48.854199
+            ],
+            [
+              2.224125,
+              48.85402
+            ],
+            [
+              2.224125,
+              48.853869
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

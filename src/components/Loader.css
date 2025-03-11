@@ -1,0 +1,74 @@
+.gvs .gvs-loader {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+.gvs .gvs-loader.gvs-loader-visible {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* Loader overlay */
+.gvs .gvs-loader {
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	opacity: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 20px;
+	align-items: center;
+	background: #37474F;
+	z-index: 9000;
+	transition: all 0.5s;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-weight: 550;
+	color: white;
+	font-size: 1.4em;
+	text-align: center;
+}
+
+.gvs .gvs-loader a {
+	color: white !important;
+}
+
+/* Flashing text */
+.gvs .gvs-loader > div > span {
+	animation: blinker 2s linear infinite;
+}
+@keyframes blinker { 50% { opacity: 0.3; } }
+
+/* Rotating logo */
+.gvs .gvs-loader .gvs-loader-img {
+	width: 150px;
+	animation: rotating 1.4s linear infinite;
+}
+
+@keyframes rotating {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+/* Call to action button */
+.gvs .gvs-loader .gvs-loader-cta {
+	border: none;
+	border-radius: 7px;
+	font-weight: 500;
+	font-size: 1.0em;
+	color: white;
+	background-color: #EF6C00;
+	cursor: pointer;
+	margin: 10px;
+	padding: 5px 30px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+.gvs .gvs-loader .gvs-loader-cta:hover {
+	background-color: #F57C00;
+}

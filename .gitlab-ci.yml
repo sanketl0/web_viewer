@@ -1,0 +1,71 @@
+# Testing
+viewer-test:
+    stage: test
+    image: node:16
+    cache:
+        paths:
+            - node_modules
+    variables:
+        CI: 1
+    script:
+        - npm install --legacy-peer-deps
+        - npm run lint
+        - npm run test
+
+# Release publishing on npm
+viewer-publish:
+    stage: deploy
+    only:
+        refs:
+            - tags
+    image: node:16
+    cache:
+        paths:
+            - node_modules
+    variables:
+        CI: 1
+    script:
+        - npm install --legacy-peer-deps
+        - npm run build
+        - echo "//registry.npmjs.org/:always-auth=true" > ~/.npmrc
+        - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+        - npm publish --userconfig=~/.npmrc --access=public --registry=https://registry.npmjs.org/
+
+# Develop publishing on npm
+viewer-publish-develop-tag:
+    stage: deploy
+    only:
+      - develop
+    image: node:16
+    cache:
+        paths:
+            - node_modules
+    variables:
+        CI: 1
+    script:
+        - npm install --legacy-peer-deps
+        - npm run build
+        - echo "//registry.npmjs.org/:always-auth=true" > ~/.npmrc
+        - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+        - VERSION=`npm view @panoramax/web-viewer version` || VERSION=`npm view geovisio version`
+        - npm version --no-git-tag-version $VERSION-develop-$CI_COMMIT_SHORT_SHA
+        - npm publish --tag develop --userconfig=~/.npmrc --access=public --registry=https://registry.npmjs.org/
+
+# Develop publishing on Gitlab Pages
+pages:
+    stage: deploy
+    only:
+      - develop
+    image: node:16
+    cache:
+        paths:
+            - node_modules
+    variables:
+        CI: 1
+    script:
+        - npm install --legacy-peer-deps
+        - npm run build
+    artifacts:
+        paths:
+            - build
+    publish: build
