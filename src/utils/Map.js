@@ -6,7 +6,6 @@ import { autoDetectLocale } from "./I18n";
 
 export const DEFAULT_TILES = "https://panoramax.openstreetmap.fr/pmtiles/basic.json";
 export const RASTER_LAYER_ID = "gvs-aerial";
-
 export const TILES_PICTURES_ZOOM = 15;
 export const TILES_PICTURES_SYMBOL_ZOOM = 18;
 
@@ -18,10 +17,7 @@ export const VECTOR_STYLES = {
 				TILES_PICTURES_SYMBOL_ZOOM, 6,
 				24, 12
 			],
-			"circle-opacity": ["interpolate", ["linear"], ["zoom"],
-				TILES_PICTURES_ZOOM, 0,
-				TILES_PICTURES_ZOOM+1, 1
-			],
+			"circle-opacity": 1, // Always visible
 			"circle-stroke-color": "#ffffff",
 			"circle-stroke-width": ["interpolate", ["linear"], ["zoom"],
 				TILES_PICTURES_ZOOM+1, 0,
@@ -34,18 +30,27 @@ export const VECTOR_STYLES = {
 	},
 	PICTURES_SYMBOLS: {
 		"paint": {
-			"icon-opacity": ["interpolate", ["linear"], ["zoom"], TILES_PICTURES_SYMBOL_ZOOM, 0, TILES_PICTURES_SYMBOL_ZOOM+1, 1],
+			"icon-opacity": 1, // Always visible
 		},
 		"layout": {
 			"icon-image": ["case", ["==", ["get", "type"], "equirectangular"], "gvs-arrow-360", "gvs-arrow-flat"],
-			"icon-size": ["interpolate", ["linear"], ["zoom"], TILES_PICTURES_SYMBOL_ZOOM, 0.5, 24, 1],
+			"icon-size": ["interpolate", ["linear"], ["zoom"], 
+				TILES_PICTURES_SYMBOL_ZOOM, 0.5, 
+				24, 1
+			],
 			"icon-rotate": ["to-number", ["get", "heading"]],
 			"icon-allow-overlap": true,
 		},
 	},
 	SEQUENCES: {
 		"paint": {
-			"line-width": ["interpolate", ["linear"], ["zoom"], 0, 0.5, 10, 2, 14, 4, 16, 5, 22, 3],
+			"line-width": ["interpolate", ["linear"], ["zoom"], 
+				0, 0.5, 
+				10, 2, 
+				14, 4, 
+				16, 5, 
+				22, 3
+			],
 		},
 		"layout": {
 			"line-cap": "square",
@@ -53,8 +58,12 @@ export const VECTOR_STYLES = {
 	},
 	SEQUENCES_PLUS: {
 		"paint": {
-			"line-width": ["interpolate", ["linear"], ["zoom"], 0, 15, TILES_PICTURES_ZOOM+1, 30, TILES_PICTURES_ZOOM+2, 0],
-			"line-opacity": 0,
+			"line-width": ["interpolate", ["linear"], ["zoom"], 
+				0, 15, 
+				TILES_PICTURES_ZOOM+1, 30, 
+				TILES_PICTURES_ZOOM+2, 0
+			],
+			"line-opacity": 1, // Always visible
 			"line-color": "#ff0000",
 		},
 		"layout": {
@@ -62,6 +71,7 @@ export const VECTOR_STYLES = {
 		}
 	}
 };
+
 
 
 // See MapLibre docs for explanation of expressions magic: https://maplibre.org/maplibre-style-spec/expressions/
