@@ -2,7 +2,7 @@
 *.log
 /node_modules
 /demo
-/build
+#/build
 /.vscode
 /env
 /site
