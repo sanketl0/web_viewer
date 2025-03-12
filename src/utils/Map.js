@@ -6,23 +6,21 @@ import { autoDetectLocale } from "./I18n";
 
 export const DEFAULT_TILES = "https://panoramax.openstreetmap.fr/pmtiles/basic.json";
 export const RASTER_LAYER_ID = "gvs-aerial";
-export const TILES_PICTURES_ZOOM = 0;
+
+export const TILES_PICTURES_ZOOM = 5;
 export const TILES_PICTURES_SYMBOL_ZOOM = 18;
 
 export const VECTOR_STYLES = {
 	PICTURES: {
 		"paint": {
 			"circle-radius": ["interpolate", ["linear"], ["zoom"],
-				0, 4.5, // Changed to start from zoom 0
-				TILES_PICTURES_SYMBOL_ZOOM, 6,
-				24, 12
+				0, 4.5, // Visible from zoom 0
+				24, 12  // Larger at max zoom
 			],
 			"circle-opacity": 1, // Always visible
 			"circle-stroke-color": "#ffffff",
 			"circle-stroke-width": ["interpolate", ["linear"], ["zoom"],
-				0, 1, // Changed to start from zoom 0
-				TILES_PICTURES_ZOOM, 2,
-				TILES_PICTURES_SYMBOL_ZOOM, 1.5,
+				0, 1,  // Ensure visibility at zoom 0
 				24, 3
 			],
 		},
@@ -33,10 +31,11 @@ export const VECTOR_STYLES = {
 			"icon-opacity": 1, // Always visible
 		},
 		"layout": {
-			"icon-image": ["case", ["==", ["get", "type"], "equirectangular"], "gvs-arrow-360", "gvs-arrow-flat"],
+			"icon-image": "default-marker", // Using default icon
 			"icon-size": ["interpolate", ["linear"], ["zoom"], 
-				0, 0.5, // Changed to start from zoom 0
-				24, 1
+				0, 0.8,  // Ensures it's visible at zoom 0
+				10, 1,  // Normal size at zoom 10
+				24, 1.5 // Slightly larger at highest zoom
 			],
 			"icon-rotate": ["to-number", ["get", "heading"]],
 			"icon-allow-overlap": true,
@@ -60,10 +59,10 @@ export const VECTOR_STYLES = {
 		"paint": {
 			"line-width": ["interpolate", ["linear"], ["zoom"], 
 				0, 15, 
-				1, 30, // Changed to make it visible from zoom 0
+				1, 30, 
 				2, 20, 
-				TILES_PICTURES_ZOOM+1, 30, 
-				TILES_PICTURES_ZOOM+2, 0
+				10, 30, 
+				24, 10
 			],
 			"line-opacity": 1, // Always visible
 			"line-color": "#ff0000",
@@ -73,6 +72,8 @@ export const VECTOR_STYLES = {
 		}
 	}
 };
+
+
 
 
 
@@ -366,6 +367,7 @@ export function getMissingLayerStyles(sources, layers) {
 export function getUserLayerId(userId, layerType) {
 	return `${getUserSourceId(userId)}_${layerType}`;
 }
+
 
 /**
  * Get cleaned-up source ID for a specific user.
