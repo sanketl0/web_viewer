@@ -14,13 +14,22 @@ export const VECTOR_STYLES = {
 	PICTURES: {
 		"paint": {
 			"circle-radius": ["interpolate", ["linear"], ["zoom"],
-				0, 4.5, // Visible from zoom 0
-				24, 12  // Larger at max zoom
+				0, 4.5,
+				TILES_PICTURES_ZOOM, 4.5,
+				TILES_PICTURES_SYMBOL_ZOOM, 6,
+				24, 12
 			],
-			"circle-opacity": 1, // Always visible
+			"circle-opacity": ["interpolate", ["linear"], ["zoom"],
+				0, 1,
+				TILES_PICTURES_ZOOM, 1,
+				TILES_PICTURES_ZOOM+1, 1
+			],
 			"circle-stroke-color": "#ffffff",
 			"circle-stroke-width": ["interpolate", ["linear"], ["zoom"],
-				0, 1,  // Ensure visibility at zoom 0
+				0, 1,
+				TILES_PICTURES_ZOOM+1, 0,
+				TILES_PICTURES_ZOOM+2, 1,
+				TILES_PICTURES_SYMBOL_ZOOM, 1.5,
 				24, 3
 			],
 		},
@@ -28,28 +37,18 @@ export const VECTOR_STYLES = {
 	},
 	PICTURES_SYMBOLS: {
 		"paint": {
-			"icon-opacity": 1, // Always visible
+			"icon-opacity": ["interpolate", ["linear"], ["zoom"], 0, 1, TILES_PICTURES_SYMBOL_ZOOM, 0, TILES_PICTURES_SYMBOL_ZOOM+1, 1],
 		},
 		"layout": {
-			"icon-image": "default-marker", // Using default icon
-			"icon-size": ["interpolate", ["linear"], ["zoom"], 
-				0, 0.8,  // Ensures it's visible at zoom 0
-				10, 1,  // Normal size at zoom 10
-				24, 1.5 // Slightly larger at highest zoom
-			],
+			"icon-image": ["case", ["==", ["get", "type"], "equirectangular"], "gvs-arrow-360", "gvs-arrow-flat"],
+			"icon-size": ["interpolate", ["linear"], ["zoom"], 0, 0.5, 24, 1],
 			"icon-rotate": ["to-number", ["get", "heading"]],
 			"icon-allow-overlap": true,
 		},
 	},
 	SEQUENCES: {
 		"paint": {
-			"line-width": ["interpolate", ["linear"], ["zoom"], 
-				0, 0.5, 
-				10, 2, 
-				14, 4, 
-				16, 5, 
-				22, 3
-			],
+			"line-width": ["interpolate", ["linear"], ["zoom"], 0, 0.5, 10, 2, 14, 4, 16, 5, 22, 3],
 		},
 		"layout": {
 			"line-cap": "square",
@@ -57,14 +56,8 @@ export const VECTOR_STYLES = {
 	},
 	SEQUENCES_PLUS: {
 		"paint": {
-			"line-width": ["interpolate", ["linear"], ["zoom"], 
-				0, 15, 
-				1, 30, 
-				2, 20, 
-				10, 30, 
-				24, 10
-			],
-			"line-opacity": 1, // Always visible
+			"line-width": ["interpolate", ["linear"], ["zoom"], 0, 15, TILES_PICTURES_ZOOM+1, 30, TILES_PICTURES_ZOOM+2, 0],
+			"line-opacity": 0,
 			"line-color": "#ff0000",
 		},
 		"layout": {
@@ -72,10 +65,6 @@ export const VECTOR_STYLES = {
 		}
 	}
 };
-
-
-
-
 
 
 // See MapLibre docs for explanation of expressions magic: https://maplibre.org/maplibre-style-spec/expressions/
